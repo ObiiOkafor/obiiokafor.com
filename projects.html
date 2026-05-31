@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Things I'm building</title>
+    <link rel="stylesheet" href="./site-ui.css" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        background: var(--page-bg-alt);
+        color: var(--text);
+      }
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 36px 20px 56px;
+      }
+      h1 {
+        margin: 18px 0 8px;
+        font-family: Georgia, serif;
+        font-size: clamp(38px, 5vw, 62px);
+      }
+      .intro {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+      .exp-line {
+        margin-top: 12px;
+        padding: 12px 14px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .exp-kicker {
+        display: inline-flex;
+        margin-right: 8px;
+        font-size: 12px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--muted-soft);
+      }
+      .exp-text {
+        color: var(--muted);
+      }
+      .exp-line.variant-v1 {
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+      .exp-line.variant-v2 {
+        background: var(--surface-soft);
+        border: 1px solid var(--border);
+      }
+      .exp-line.variant-v3 {
+        background: var(--button-bg);
+        border: 1px solid var(--button-bg);
+        color: var(--button-text);
+      }
+      .exp-line.variant-v3 .exp-kicker,
+      .exp-line.variant-v3 .exp-text {
+        color: var(--button-text);
+      }
+      .inline-companies {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .company-tile {
+        background: var(--chip-bg);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .company-name {
+        font-size: 12px;
+        color: var(--text);
+        line-height: 1.2;
+      }
+      .exp-contact {
+        display: inline-flex;
+        text-decoration: none;
+        border: 2px solid var(--button-bg);
+        border-radius: 999px;
+        color: var(--button-text);
+        background: var(--button-bg);
+        padding: 7px 12px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .exp-contact:hover {
+        background: var(--button-bg-hover);
+        border-color: var(--button-bg-hover);
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--muted);
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot.red { background: #c0392b; }
+      .dot.amber { background: #d08a00; }
+      .dot.green { background: #2e8b57; }
+      .timeline {
+        margin-top: 26px;
+        border-left: 2px solid var(--border-strong);
+        padding-left: 22px;
+      }
+      .item {
+        position: relative;
+        margin-bottom: 24px;
+        background: var(--surface-strong);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+      }
+      .item::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background: var(--text);
+        border-radius: 50%;
+        position: absolute;
+        left: -30px;
+        top: 20px;
+      }
+      .meta { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-soft); }
+      .row { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+      .item h2 { margin: 8px 0; font-family: Georgia, serif; font-size: 27px; }
+      .item p { margin: 0; color: var(--muted); line-height: 1.45; }
+      .item-actions {
+        margin-top: 12px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .project-link {
+        display: inline-grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        text-decoration: none;
+        border: 2px solid var(--button-bg);
+        border-radius: 999px;
+        color: var(--button-text);
+        background: var(--button-bg);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1;
+      }
+      .project-link:hover {
+        background: var(--button-bg-hover);
+        border-color: var(--button-bg-hover);
+      }
+      .touch {
+        margin-top: 12px;
+        padding: 18px 16px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface-soft);
+        text-align: center;
+      }
+      .touch p {
+        margin: 0 0 12px;
+        color: var(--text);
+        font-size: 22px;
+        line-height: 1.2;
+        font-family: Georgia, serif;
+      }
+      .touch .linkedin {
+        display: inline-flex;
+        text-decoration: none;
+        border: 2px solid var(--button-bg);
+        border-radius: 999px;
+        color: var(--button-text);
+        background: var(--button-bg);
+        padding: 11px 16px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .touch .linkedin:hover {
+        background: var(--button-bg-hover);
+        border-color: var(--button-bg-hover);
+      }
+    </style>
+  </head>
+  <body data-page="projects">
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Obii Okafor home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
+        </a>
+        <nav class="top-nav" aria-label="Site navigation">
+          <ul>
+            <li><a data-page-link="home" href="./index.html">Home</a></li>
+            <li><a data-page-link="projects" href="./projects.html">Things I'm Building</a></li>
+            <li><a data-page-link="press" href="./press-media.html">Press & Media</a></li>
+            <li><a data-page-link="contact" href="./contact.html">Stay in Touch</a></li>
+          </ul>
+        </nav>
+        <div class="theme-switch" aria-label="Theme switcher">
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span aria-hidden="true">☼</span></button>
+        </div>
+      </header>
+    </div>
+    <main>
+      <h1>Things I'm building</h1>
+
+      <p id="expLine" class="exp-line variant-v2">
+        <span class="exp-kicker">Professional Experience</span>
+        <span class="inline-companies">
+          <span class="company-tile"><span class="company-name">8x8</span></span>
+          <span class="company-tile"><span class="company-name">CityFibre</span></span>
+          <span class="company-tile"><span class="company-name">Gradwell</span></span>
+          <span class="company-tile"><span class="company-name">Future Anthem</span></span>
+          <span class="company-tile"><span class="company-name">TafaBot</span></span>
+          <span class="company-tile"><span class="company-name">CODE</span></span>
+        </span>
+        <a class="exp-contact" href="./contact.html">Need my CV? Get in touch</a>
+      </p>
+      <p class="intro">Beyond my day job, these are initiatives I’m currently bringing to life.</p>
+
+      <section class="timeline">
+        <article class="item">
+          <div class="meta">Community Project</div>
+          <div class="row"><h2>PMHelp</h2><span class="chip"><span class="dot green"></span>Active</span></div>
+          <p>A free learning and community platform helping aspiring and early-career product managers build strong foundations through curated resources, structured learning pillars, interview prep, CV reviews, and peer support.</p>
+          <div class="item-actions"><a class="project-link" href="https://www.pmhelp.co" target="_blank" rel="noreferrer" aria-label="Visit PMHelp project" title="Visit PMHelp">↗</a></div>
+        </article>
+        <article class="item">
+          <div class="meta">Product Build</div>
+          <div class="row"><h2>Capstone</h2><span class="chip"><span class="dot green"></span>Active</span></div>
+          <p>An AI-powered workplace simulation for product managers, built to help early- and mid-career professionals practice real PM scenarios, ship deliverables like PRDs, and walk away with scored feedback they can use as proof of skill.</p>
+          <div class="item-actions"><a class="project-link" href="https://www.usecapstone.com" target="_blank" rel="noreferrer" aria-label="Visit Capstone project" title="Visit Capstone">↗</a></div>
+        </article>
+        <article class="item">
+          <div class="meta">Product Build</div>
+          <div class="row"><h2>MOViID</h2><span class="chip"><span class="dot green"></span>Active</span></div>
+          <p>A film-discovery tool that identifies the movie or TV show behind a screenshot or clip, then surfaces the exact scene, title, and where to stream it almost instantly.</p>
+          <div class="item-actions"><a class="project-link" href="http://reel-sound-detective.lovable.app/" target="_blank" rel="noreferrer" aria-label="Visit MOViID project" title="Visit MOViID">↗</a></div>
+        </article>
+        <article class="item">
+          <div class="meta">Product Build</div>
+          <div class="row"><h2>Green Quest</h2><span class="chip"><span class="dot green"></span>Active</span></div>
+          <p>A retro-style sustainability game that helps people learn circular thinking by guessing what everyday waste can be recycled into, turning climate education into something playful and memorable.</p>
+          <div class="item-actions"><a class="project-link" href="https://obiiokafor.github.io/green-guess/" target="_blank" rel="noreferrer" aria-label="Visit Green Quest project" title="Visit Green Quest">↗</a></div>
+        </article>
+        <article class="item">
+          <div class="meta">Product Build</div>
+          <div class="row"><h2>Search My Life</h2><span class="chip"><span class="dot red"></span>Blocked</span></div>
+          <p>A personal search engine for digital life, designed to let people find tweets, messages, documents, and screenshots using natural-language prompts instead of digging across disconnected tools.</p>
+          <div class="item-actions"><a class="project-link" href="https://memory-whisperer-search.lovable.app/" target="_blank" rel="noreferrer" aria-label="Visit Search My Life project" title="Visit Search My Life">↗</a></div>
+        </article>
+      </section>
+
+      <section class="touch">
+        <p>Would you love to collaborate?</p>
+        <a class="linkedin" href="https://www.linkedin.com/in/obiageli-okafor" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+      </section>
+
+      <footer class="site-footer">
+        <div class="footer-left">
+          <p>© 2026 Obii Okafor</p>
+          <div class="footer-nav">
+            <a href="./index.html">Home</a>
+            <a href="./projects.html">Things I'm Building</a>
+            <a href="./press-media.html">Press & Media</a>
+            <a href="./contact.html">Stay in Touch</a>
+          </div>
+        </div>
+        <div class="social" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/obiageli-okafor" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5Zm-1.69-4.7a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.44 13.4c0-3.33-1.78-4.88-4.15-4.88-1.91 0-2.76 1.05-3.24 1.79V8.5H9.67V20h3.38v-5.7c0-1.5.28-2.95 2.15-2.95 1.84 0 1.86 1.72 1.86 3.05V20h3.38v-6.6Z"/></svg>
+          </a>
+          <a href="https://x.com/obiiokafor1?s=21&t=R1z7tlqv8gVdBXQX9fZ9Ow" target="_blank" rel="noreferrer" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.73L23.2 22h-6.26l-4.9-6.52L6.36 22H3.25l7.25-8.3L.8 2h6.36l4.43 5.9L18.9 2Zm-1.1 18h1.73L6.27 3.9H4.42L17.8 20Z"/></svg>
+          </a>
+          <a href="https://github.com/ObiiOkafor?tab=overview&from=2026-05-01&to=2026-05-31" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12.2c0 5.2 3.37 9.62 8.04 11.18.59.11.8-.26.8-.58v-2.05c-3.27.73-3.96-1.42-3.96-1.42-.54-1.4-1.32-1.77-1.32-1.77-1.08-.75.08-.74.08-.74 1.2.09 1.83 1.25 1.83 1.25 1.06 1.87 2.79 1.33 3.47 1.02.11-.79.42-1.33.76-1.64-2.61-.31-5.35-1.34-5.35-5.94 0-1.31.46-2.38 1.21-3.22-.12-.31-.52-1.57.12-3.27 0 0 .99-.32 3.24 1.23a11.03 11.03 0 0 1 5.9 0c2.25-1.55 3.24-1.23 3.24-1.23.64 1.7.24 2.96.12 3.27.75.84 1.21 1.91 1.21 3.22 0 4.61-2.75 5.63-5.37 5.94.43.37.81 1.1.81 2.23v3.3c0 .32.21.7.81.58A11.7 11.7 0 0 0 23.5 12.2 11.5 11.5 0 0 0 12 .5Z"/></svg>
+          </a>
+        </div>
+      </footer>
+    </main>
+    <script src="./site-theme.js"></script>
+  </body>
+</html>

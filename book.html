@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Waitlist | Obii Okafor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./site-ui.css" />
+    <link rel="stylesheet" href="./book.css" />
+    <script defer src="./site-theme.js"></script>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer
+    ></script>
+    <script defer src="./book.js"></script>
+  </head>
+  <body data-page="book">
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="./index.html" aria-label="Obii Okafor home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+        <nav class="top-nav" aria-label="Site navigation">
+          <ul>
+            <li><a data-page-link="home" href="./index.html">Home</a></li>
+            <li><a data-page-link="projects" href="./projects.html">Things I'm Building</a></li>
+            <li><a data-page-link="press" href="./press-media.html">Press &amp; Media</a></li>
+            <li><a data-page-link="contact" href="./contact.html">Stay in Touch</a></li>
+            <li><a data-page-link="book" href="./book.html">Book</a></li>
+          </ul>
+        </nav>
+        <div class="theme-switch" aria-label="Theme switcher">
+          <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+            <span aria-hidden="true">☼</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="book-hero">
+          <div class="book-hero__content">
+            <p class="book-eyebrow">Book Waitlist</p>
+            <h1>Join me early.</h1>
+            <p class="book-intro">
+              I'm writing a book, and I'd love to keep you close as it takes shape.
+              Join the waitlist for launch updates, first looks, and the note I send
+              when it is ready to meet the world.
+            </p>
+            <ul class="book-points" aria-label="What you will get">
+              <li>Launch updates that are actually useful</li>
+              <li>Early access when the book is ready</li>
+              <li>A thoughtful welcome note in your inbox</li>
+            </ul>
+          </div>
+
+          <div class="book-card">
+            <div class="book-card__header">
+              <h2>Get on the waitlist</h2>
+              <p>Just your email, plus your first name if you'd like me to make it personal.</p>
+            </div>
+
+            <form class="book-form" id="book-waitlist-form" novalidate>
+              <div class="book-field-group">
+                <label class="book-label" for="book-first-name">First name <span>(optional)</span></label>
+                <input
+                  class="book-input"
+                  id="book-first-name"
+                  name="first_name"
+                  type="text"
+                  autocomplete="given-name"
+                  maxlength="80"
+                />
+              </div>
+
+              <div class="book-field-group">
+                <label class="book-label" for="book-email">Email address</label>
+                <input
+                  class="book-input"
+                  id="book-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  inputmode="email"
+                  required
+                  maxlength="160"
+                />
+              </div>
+
+              <input
+                class="book-honeypot"
+                type="text"
+                name="company"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+
+              <div class="book-turnstile">
+                <div
+                  class="cf-turnstile"
+                  data-sitekey="0x4AAAAAAD6s1Wx3NGRV4ueQ"
+                  data-theme="auto"
+                  data-size="flexible"
+                ></div>
+              </div>
+
+              <button class="btn btn-primary book-submit" type="submit">
+                Join the Waitlist
+              </button>
+
+              <p class="book-fineprint">
+                By joining, you're signing up for updates about the book. No spam, no noise.
+              </p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-left">
+          <p>© 2026 Obii Okafor</p>
+          <div class="footer-nav">
+            <a href="./index.html">Home</a>
+            <a href="./projects.html">Things I'm Building</a>
+            <a href="./press-media.html">Press &amp; Media</a>
+            <a href="./contact.html">Stay in Touch</a>
+            <a href="./book.html">Book</a>
+          </div>
+        </div>
+        <div class="social" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/obiageli-okafor" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://x.com/obiiokafor1?s=21&t=R1z7tlqv8gVdBXQX9fZ9Ow" target="_blank" rel="noreferrer">X</a>
+          <a href="https://github.com/ObiiOkafor?tab=overview&from=2026-05-01&to=2026-05-31" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </footer>
+    </div>
+
+    <div class="book-toast" id="book-toast" aria-live="polite" hidden></div>
+  </body>
+</html>

@@ -7,7 +7,7 @@
   function getPalette() {
     if (document.body.getAttribute("data-theme") === "dark") {
       return {
-        background: "linear-gradient(135deg, #221c19, #171311)",
+        background: "linear-gradient(135deg, #3a261b, #241711)",
         heading: "#f4e9df",
         subheading: "#dcc9b9",
         body: "#c8b3a2",

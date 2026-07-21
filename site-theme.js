@@ -9,12 +9,16 @@
     if (themeButton) {
       const isDark = theme === "dark";
       themeButton.classList.toggle("is-active", isDark);
-      themeButton.setAttribute("aria-pressed", String(isDark));
+      themeButton.setAttribute("role", "switch");
+      themeButton.setAttribute("aria-checked", String(isDark));
       themeButton.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
       themeButton.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
       themeButton.innerHTML = `
-        <span class="theme-icon" aria-hidden="true">${isDark ? "☾" : "☼"}</span>
-        <span class="theme-label">${isDark ? "Dark" : "Light"}</span>
+        <span class="theme-track" aria-hidden="true">
+          <span class="theme-knob">
+            <span class="theme-icon">${isDark ? "☼" : "☾"}</span>
+          </span>
+        </span>
       `;
     }
     window.localStorage.setItem(storageKey, theme);

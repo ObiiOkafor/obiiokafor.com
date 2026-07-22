@@ -7,6 +7,10 @@
     <meta name="description" content="Learn more about Obii Okafor, a London-based product leader, speaker, author and community builder." />
     <link rel="canonical" href="https://obiiokafor.com/about" />
     <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="application-name" content="Obii Okafor" />
+    <meta name="theme-color" content="#efe8df" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2d1d16" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Obii Okafor" />
     <meta property="og:title" content="About | Obii Okafor" />
@@ -84,6 +88,7 @@
       }
       .photo-card {
         overflow: hidden;
+        margin: 0;
         border: 1px solid var(--border);
         background: var(--surface);
         box-shadow: 0 24px 70px rgba(38, 26, 18, 0.12);
@@ -578,9 +583,92 @@
         }
       }
     </style>
+
+    <!-- SEO structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://obiiokafor.com/#person",
+          "name": "Obiageli Okafor",
+          "alternateName": [
+            "Obii Okafor",
+            "Obii"
+          ],
+          "url": "https://obiiokafor.com/",
+          "image": "https://obiiokafor.com/assets/about-profile-square.jpg",
+          "jobTitle": "Senior Product Manager",
+          "description": "Obiageli Okafor is a London-based Senior Product Manager, product leader, product management speaker, author and technology leader.",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "8x8",
+            "url": "https://www.8x8.com/"
+          },
+          "founder": [
+            {
+              "@id": "https://www.pmhelp.co/#organization"
+            },
+            {
+              "@type": "Organization",
+              "name": "Capstone",
+              "url": "https://www.usecapstone.com/"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/obiageli-okafor",
+            "https://x.com/obiiokafor1",
+            "https://github.com/ObiiOkafor"
+          ],
+          "knowsAbout": [
+            "Product Management",
+            "Product Leadership",
+            "Artificial Intelligence",
+            "AI",
+            "Cloud Communications",
+            "Enterprise Platforms",
+            "Digital Transformation",
+            "Career Growth",
+            "Leadership",
+            "PMHelp",
+            "Capstone",
+            "Usecapstone"
+          ],
+          "award": [
+            "TechWomen100 Winner",
+            "SHEList 100 Female Impact Leader in the UK",
+            "She Inspires Award Winner for Women in Digital Innovation and Communication",
+            "Women in Telecoms Champion 2026",
+            "50 Women Tech Titans in Nigeria"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://obiiokafor.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://obiiokafor.com/about"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <!-- /SEO structured data -->
   </head>
   <body data-page="about" data-about-variant="editorial">
-    <div class="site-shell">
+
+    <a class="skip-link" href="#main-content">Skip to content</a><div class="site-shell">
       <header class="site-header">
         <a class="brand" href="./index.html" aria-label="Obii Okafor home">
           <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
@@ -601,7 +689,7 @@
       </header>
     </div>
 
-    <main class="about-main">
+    <main id="main-content" class="about-main">
       <section class="about-hero">
         <div class="about-hero-copy">
           <p class="eyebrow">About Obii</p>

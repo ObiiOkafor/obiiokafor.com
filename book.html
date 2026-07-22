@@ -7,6 +7,10 @@
     <meta name="description" content="Join the waitlist for Impossible to Ignore, Obii Okafor's practical playbook for getting seen, getting known and opening doors." />
     <link rel="canonical" href="https://obiiokafor.com/book" />
     <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="application-name" content="Obii Okafor" />
+    <meta name="theme-color" content="#efe8df" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2d1d16" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Obii Okafor" />
     <meta property="og:title" content="Impossible to Ignore | Obii Okafor" />
@@ -28,9 +32,48 @@
       defer
     ></script>
     <script defer src="./book.js?v=books-blend-1"></script>
+
+    <!-- SEO structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://obiiokafor.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Books",
+              "item": "https://obiiokafor.com/book"
+            }
+          ]
+        },
+        {
+          "@type": "Book",
+          "@id": "https://obiiokafor.com/book#impossible-to-ignore",
+          "name": "Impossible to Ignore",
+          "author": {
+            "@id": "https://obiiokafor.com/#person"
+          },
+          "url": "https://obiiokafor.com/book",
+          "description": "A practical playbook for getting seen, getting known and opening doors, with workbook exercises."
+        }
+      ]
+    }
+    </script>
+    <!-- /SEO structured data -->
   </head>
   <body data-page="book">
-    <div class="site-shell">
+
+    <a class="skip-link" href="#main-content">Skip to content</a><div class="site-shell">
       <header class="site-header">
         <a class="brand" href="./index.html" aria-label="Obii Okafor home">
           <span class="brand-mark" aria-hidden="true">
@@ -56,7 +99,7 @@
       </header>
     </div>
 
-    <main class="book-main">
+    <main id="main-content" class="book-main">
       <section class="book-banner" aria-labelledby="book-title">
         <div class="book-cover-stack">
           <div class="book-cover-wrap">

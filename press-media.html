@@ -7,6 +7,10 @@
     <meta name="description" content="Press, media, speaking engagements, articles, awards and recognition featuring Obii Okafor." />
     <link rel="canonical" href="https://obiiokafor.com/press-media" />
     <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="application-name" content="Obii Okafor" />
+    <meta name="theme-color" content="#efe8df" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2d1d16" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Obii Okafor" />
     <meta property="og:title" content="Press &amp; Media | Obii Okafor" />
@@ -129,6 +133,25 @@
         padding: 10px;
         text-align: center;
       }
+      .press-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .press-links a {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--text);
+        padding: 10px 14px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 650;
+      }
+      .press-links a:hover {
+        background: var(--icon-bg-hover);
+      }
       .read {
         margin-top: 14px;
         display: inline-flex;
@@ -175,9 +198,47 @@
         .grid { grid-template-columns: 1fr; }
       }
     </style>
+
+    <!-- SEO structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://obiiokafor.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Press & Media",
+              "item": "https://obiiokafor.com/press-media"
+            }
+          ]
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://obiiokafor.com/press-media#page",
+          "name": "Press & Media | Obii Okafor",
+          "url": "https://obiiokafor.com/press-media",
+          "about": {
+            "@id": "https://obiiokafor.com/#person"
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- /SEO structured data -->
   </head>
   <body data-page="press">
-    <div class="site-shell">
+
+    <a class="skip-link" href="#main-content">Skip to content</a><div class="site-shell">
       <header class="site-header">
         <a class="brand" href="./index.html" aria-label="Obii Okafor home">
           <span class="brand-mark" aria-hidden="true"><span></span><span></span></span>
@@ -197,9 +258,14 @@
         </div>
       </header>
     </div>
-    <main>
+    <main id="main-content">
       <h1>Press & Media</h1>
       <p class="intro">I enjoy sharing ideas about product leadership, technology, inclusion and building communities that create opportunity. Here are some of the conversations, talks, awards and articles where my work and perspectives have been featured.</p>
+      <nav class="press-links" aria-label="Press and media sections">
+        <a href="./speaking.html">Speaking</a>
+        <a href="./media.html">Articles &amp; Features</a>
+        <a href="./awards.html">Awards &amp; Recognition</a>
+      </nav>
 
       <section>
         <h2>Speaking Engagements</h2>
@@ -210,7 +276,7 @@
               <img src="./press-media-assets/students-in-tech.jpg" alt="Event image for product management, careers in tech, and students in tech speaking engagement" />
             </div>
             <div class="meta">University Talk</div>
-            <div class="title">Product Management, Careers in Tech, Students in Tech</div>
+            <h3 class="title">Product Management, Careers in Tech, Students in Tech</h3>
             <p class="body">A speaking session focused on product management pathways, breaking into tech, and helping students think more clearly about building sustainable careers in the industry.</p>
             <a class="read" href="https://www.linkedin.com/posts/obiageli-okafor_productmanagement-careersintech-studentsintech-activity-7424095499449860096-_yKG?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABY3n5QBDt8NIs2e4pU8MTakQdp9OVZuTOE" target="_blank" rel="noreferrer">View Post</a>
           </article>
@@ -219,7 +285,7 @@
               <img src="./press-media-assets/women-in-telecoms.jpg" alt="Event image for women in telecoms speaking event" />
             </div>
             <div class="meta">Career Talk</div>
-            <div class="title">Women in Telecoms Event</div>
+            <h3 class="title">Women in Telecoms Event</h3>
             <p class="body">A speaking session focused on women in telecoms, navigating career growth, and building the confidence to lead, contribute, and thrive in the industry.</p>
             <a class="read" href="https://www.linkedin.com/posts/obiageli-okafor_im-really-looking-forward-to-this-activity-7421527214568984576-kSId?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABY3n5QBDt8NIs2e4pU8MTakQdp9OVZuTOE" target="_blank" rel="noreferrer">View Post</a>
           </article>
@@ -228,7 +294,7 @@
               <img src="./press-media-assets/tesco-technology.jpg" alt="Event image for Tesco Technology speaking session" />
             </div>
             <div class="meta">Industry Talk</div>
-            <div class="title">Tesco Technology Speaking Session</div>
+            <h3 class="title">Tesco Technology Speaking Session</h3>
             <p class="body">An industry-facing speaking engagement connected to Tesco Technology, reflecting work at the intersection of product thinking, technology, and career growth in modern digital teams.</p>
             <a class="read" href="https://www.linkedin.com/posts/obiageli-okafor_really-excited-to-be-speaking-at-tesco-technology-activity-7419307158552350721-pLi4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABY3n5QBDt8NIs2e4pU8MTakQdp9OVZuTOE" target="_blank" rel="noreferrer">View Post</a>
           </article>
@@ -237,7 +303,7 @@
               <img src="./press-media-assets/break-into-tech.jpg" alt="Event image for break into tech and product management community talk" />
             </div>
             <div class="meta">Community Talk</div>
-            <div class="title">Tech Careers, Product Management, Break Into Tech</div>
+            <h3 class="title">Tech Careers, Product Management, Break Into Tech</h3>
             <p class="body">A speaking session designed to make product management and broader tech careers feel more accessible, practical, and achievable for people trying to break into the space.</p>
             <a class="read" href="https://www.linkedin.com/posts/obiageli-okafor_techcareers-productmanagement-breakintotech-activity-7439279273217216513-KxMk?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAABY3n5QBDt8NIs2e4pU8MTakQdp9OVZuTOE" target="_blank" rel="noreferrer">View Post</a>
           </article>
@@ -252,7 +318,7 @@
               <img src="./press-media-assets/brummell-ones-to-watch.jpg" alt="Brummell Magazine feature image for Ones to Watch in the City 2025" />
             </div>
             <div class="meta">Feature</div>
-            <div class="title">Ones to Watch in the City 2025</div>
+            <h3 class="title">Ones to Watch in the City 2025</h3>
             <p class="body">Publication: Brummell Magazine. A feature recognizing standout talent shaping the future of the city.</p>
             <a class="read" href="https://brummellmagazine.co.uk/people/ones-to-watch-in-the-city-2025/" target="_blank" rel="noreferrer">Read Feature</a>
           </article>
@@ -261,7 +327,7 @@
               <img src="./press-media-assets/comms-council-gradwell.png" alt="Comms Council UK feature image for In Focus: Gradwell Communications" />
             </div>
             <div class="meta">Profile Feature</div>
-            <div class="title">In Focus: Gradwell Communications</div>
+            <h3 class="title">In Focus: Gradwell Communications</h3>
             <p class="body">Publication: Comms Council UK. A profile conversation covering telecom innovation, product leadership, and the community impact of PMHelp.</p>
             <a class="read" href="https://commscouncil.uk/in-focus-gradwell-communications/" target="_blank" rel="noreferrer">Read Feature</a>
           </article>
@@ -270,7 +336,7 @@
               <img src="./press-media-assets/nigeria-info-green-quest.jpg" alt="Nigeria Info FM feature image for Green Quest climate education story" />
             </div>
             <div class="meta">Interview Feature</div>
-            <div class="title">Nigerian Techie Using Gamification to Tackle Climate Change in London</div>
+            <h3 class="title">Nigerian Techie Using Gamification to Tackle Climate Change in London</h3>
             <p class="body">Publication: Nigeria Info FM. A feature on Green Quest and the use of games and storytelling to make climate learning more accessible for children.</p>
             <a class="read" href="https://www.nigeriainfo.fm/news/homepagelagos/nigerian-techie-using-gamification-to-tackle-climate-change-in-london/" target="_blank" rel="noreferrer">Read Article</a>
           </article>
@@ -279,7 +345,7 @@
               <img src="./press-media-assets/zikoko-global-talent.png" alt="Zikoko feature image about moving from a student visa to the Global Talent Visa" />
             </div>
             <div class="meta">Profile Feature</div>
-            <div class="title">She Went to the UK on a Student Visa. Now, She’s on the Global Talent Visa</div>
+            <h3 class="title">She Went to the UK on a Student Visa. Now, She’s on the Global Talent Visa</h3>
             <p class="body">Publication: Zikoko. A personal story about migration, ambition, and building a path from studying in the UK to securing the Global Talent Visa.</p>
             <a class="read" href="https://www.zikoko.com/citizen/she-went-with-a-student-visa-then-switched/" target="_blank" rel="noreferrer">Read Article</a>
           </article>
@@ -294,7 +360,7 @@
               <img src="./press-media-assets/sheinspires-award.jpg" alt="SheInspires Recognition to Impact Awards event image" />
             </div>
             <div class="meta">2025 Winner</div>
-            <div class="title">SheInspires Recognition to Impact Awards</div>
+            <h3 class="title">SheInspires Recognition to Impact Awards</h3>
             <p class="body">Winner of the Digital Innovation and Communication category, recognizing leadership and contribution in digital innovation.</p>
             <a class="read" href="https://www.linkedin.com/posts/obiageli-okafor_sheinspiresawards-womenindigital-womenintech-activity-7398708349674074112-y9HU?utm_source=share&utm_medium=member_desktop&rcm=ACoAABY3n5QBDt8NIs2e4pU8MTakQdp9OVZuTOE" target="_blank" rel="noreferrer">View Award</a>
           </article>
@@ -303,7 +369,7 @@
               <img src="./press-media-assets/women-tech-titans.jpg" alt="Women in Tech Nigeria 50 Women Tech Titans recognition image" />
             </div>
             <div class="meta">2026 Recognition</div>
-            <div class="title">50 Women Tech Titans</div>
+            <h3 class="title">50 Women Tech Titans</h3>
             <p class="body">Recognized by Women in Tech Nigeria as one of the 50 Women Tech Titans for 2026, celebrating women shaping leadership and impact across the tech ecosystem.</p>
             <a class="read" href="https://www.linkedin.com/posts/womenintech-nigeria_womenintechnigeria-50womentechtitans-iwd2026-activity-7440770387799457792-CcoX?utm_source=share&utm_medium=member_desktop&rcm=ACoAABY3n5QBDt8NIs2e4pU8MTakQdp9OVZuTOE" target="_blank" rel="noreferrer">View Recognition</a>
           </article>
@@ -312,7 +378,7 @@
               <img src="./press-media-assets/techwomen100.jpg" alt="TechWomen100 Winner recognition image" />
             </div>
             <div class="meta">2025 Winner</div>
-            <div class="title">TechWomen100 Winner</div>
+            <h3 class="title">TechWomen100 Winner</h3>
             <p class="body">Recognized among the 2025 TechWomen100 winners for contribution and impact across technology and digital innovation.</p>
             <a class="read" href="https://www.linkedin.com/posts/obiageli-okafor_techwomen100-womenintech-digitalinnovation-activity-7404530644581756928-awBT?utm_source=share&utm_medium=member_desktop&rcm=ACoAABY3n5QBDt8NIs2e4pU8MTakQdp9OVZuTOE" target="_blank" rel="noreferrer">View Award</a>
           </article>
@@ -321,7 +387,7 @@
               <img src="./press-media-assets/shelist-100women.jpg" alt="SHEList 2026 founding cohort recognition image" />
             </div>
             <div class="meta">2026 Recognition</div>
-            <div class="title">100 SHEList Impact Leaders 2026</div>
+            <h3 class="title">100 SHEList Impact Leaders 2026</h3>
             <p class="body">Selected as part of the founding cohort celebrating women driving visible impact across leadership, innovation, and opportunity creation.</p>
             <a class="read" href="https://www.sheinspires.org.uk/shelist2026/" target="_blank" rel="noreferrer">View Recognition</a>
           </article>

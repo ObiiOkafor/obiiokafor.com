@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://obiiokafor.com/sitemap.xml

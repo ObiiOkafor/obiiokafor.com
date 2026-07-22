@@ -7,6 +7,10 @@
     <meta name="description" content="Obii Okafor is a product leader, speaker, author and community builder creating products and opportunities across technology." />
     <link rel="canonical" href="https://obiiokafor.com/" />
     <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="application-name" content="Obii Okafor" />
+    <meta name="theme-color" content="#efe8df" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2d1d16" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Obii Okafor" />
     <meta property="og:title" content="Obii Okafor | Product Leader, Builder &amp; Speaker" />
@@ -22,48 +26,116 @@
     <link rel="stylesheet" href="./site-ui.css" />
     <link rel="stylesheet" href="./hero-studio.css" />
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://obiiokafor.com/#website",
-            "url": "https://obiiokafor.com/",
-            "name": "Obii Okafor",
-            "description": "Personal website of Obii Okafor, product leader, speaker, author and community builder."
-          },
-          {
-            "@type": "Person",
-            "@id": "https://obiiokafor.com/#person",
-            "name": "Obiageli Okafor",
-            "alternateName": "Obii Okafor",
-            "url": "https://obiiokafor.com/",
-            "image": "https://obiiokafor.com/assets/about-profile-square.jpg",
-            "jobTitle": "Senior Product Manager",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "8x8"
-            },
-            "sameAs": [
-              "https://www.linkedin.com/in/obiageli-okafor",
-              "https://x.com/obiiokafor1",
-              "https://github.com/ObiiOkafor"
-            ],
-            "knowsAbout": [
-              "Product Management",
-              "Artificial Intelligence",
-              "Cloud Communications",
-              "Digital Transformation",
-              "Career Growth",
-              "Leadership"
-            ]
-          }
-        ]
-      }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://obiiokafor.com/#website",
+      "url": "https://obiiokafor.com/",
+      "name": "Obii Okafor",
+      "alternateName": [
+        "Obiageli Okafor",
+        "Obii Okafor"
+      ],
+      "description": "Personal website of Obii Okafor, Senior Product Manager, product leader, product management speaker, author and builder of PMHelp and Capstone.",
+      "publisher": {
+        "@id": "https://obiiokafor.com/#person"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://obiiokafor.com/#person",
+      "name": "Obiageli Okafor",
+      "alternateName": [
+        "Obii Okafor",
+        "Obii"
+      ],
+      "url": "https://obiiokafor.com/",
+      "image": "https://obiiokafor.com/assets/about-profile-square.jpg",
+      "jobTitle": "Senior Product Manager",
+      "description": "Obiageli Okafor is a London-based Senior Product Manager, product leader, product management speaker, author and technology leader.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "8x8",
+        "url": "https://www.8x8.com/"
+      },
+      "founder": [
+        {
+          "@id": "https://www.pmhelp.co/#organization"
+        },
+        {
+          "@type": "Organization",
+          "name": "Capstone",
+          "url": "https://www.usecapstone.com/"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/obiageli-okafor",
+        "https://x.com/obiiokafor1",
+        "https://github.com/ObiiOkafor"
+      ],
+      "knowsAbout": [
+        "Product Management",
+        "Product Leadership",
+        "Artificial Intelligence",
+        "AI",
+        "Cloud Communications",
+        "Enterprise Platforms",
+        "Digital Transformation",
+        "Career Growth",
+        "Leadership",
+        "PMHelp",
+        "Capstone",
+        "Usecapstone"
+      ],
+      "award": [
+        "TechWomen100 Winner",
+        "SHEList 100 Female Impact Leader in the UK",
+        "She Inspires Award Winner for Women in Digital Innovation and Communication",
+        "Women in Telecoms Champion 2026",
+        "50 Women Tech Titans in Nigeria"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.pmhelp.co/#organization",
+      "name": "PMHelp",
+      "url": "https://www.pmhelp.co/",
+      "founder": {
+        "@id": "https://obiiokafor.com/#person"
+      },
+      "description": "PMHelp is a global platform helping people build successful careers in product management through education, mentoring, career programmes, AI-powered tools and industry initiatives.",
+      "sameAs": [
+        "https://www.pmhelp.co/"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://obiiokafor.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Home",
+          "item": "https://obiiokafor.com/"
+        }
+      ]
+    }
+  ]
+}
+</script>
   </head>
   <body data-page="home">
-    <div class="site-shell">
+
+    <a class="skip-link" href="#main-content">Skip to content</a><div class="site-shell">
       <header class="site-header">
         <a class="brand" href="./index.html" aria-label="Obii Okafor home">
           <span class="brand-mark" aria-hidden="true">
@@ -88,9 +160,23 @@
         </div>
       </header>
     </div>
-    <main class="clean-preview">
+    <main id="main-content" class="clean-preview">
       <section class="stage-wrap">
-        <section id="heroStage" class="preview-stage"></section>
+        <section id="heroStage" class="preview-stage">
+          <section class="hero">
+            <div class="portrait"><img src="./Obii profesh photo.jpg" alt="Obii Okafor portrait" /></div>
+            <div class="content">
+              <div class="eyebrow">Product Leader · Builder · Speaker</div>
+              <h1>Obii Okafor</h1>
+              <p class="location"><span class="gm-pin" aria-hidden="true"></span>United Kingdom 🇬🇧</p>
+              <p>I have led delivery, product strategy, and digital transformation across telecoms, fintech, and AI, building scalable digital platforms and high impact products across Europe, the Middle East, and Africa.</p>
+              <div class="cta-row">
+                <a class="primary" href="./contact.html">Stay in Touch</a>
+                <a class="secondary" href="./projects.html">Explore My Work</a>
+              </div>
+            </div>
+          </section>
+        </section>
       </section>
       <footer class="site-footer">
         <div class="footer-left">
@@ -120,6 +206,6 @@
 
     <script src="./site-theme.js"></script>
     <script src="./hero-studio-config.js"></script>
-    <script src="./hero-studio.js"></script>
+    <script src="./hero-studio.js?v=seo-1"></script>
   </body>
 </html>

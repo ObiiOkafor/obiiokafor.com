@@ -44,7 +44,7 @@
         <div class="portrait">${portraitMarkup}</div>
         <div class="content">
           <div class="eyebrow">${hero.copy.eyebrow}</div>
-          <h2>${hero.copy.title}</h2>
+          <h1>${hero.copy.title}</h1>
           ${hero.copy.location ? `<p class="location"><span class="gm-pin" aria-hidden="true"></span>${hero.copy.location}</p>` : ""}
           ${hero.copy.subtitle ? `<h3>${hero.copy.subtitle}</h3>` : ""}
           ${hero.copy.tagline ? `<p class="tagline">${hero.copy.tagline}</p>` : ""}

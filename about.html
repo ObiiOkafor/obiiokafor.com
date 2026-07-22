@@ -19,35 +19,6 @@
         margin: 0 auto;
         padding: 26px 20px 56px;
       }
-      .preview-control {
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin: 0 0 26px;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        background: var(--surface);
-        padding: 8px 10px 8px 14px;
-        color: var(--muted);
-        box-shadow: 0 16px 40px rgba(38, 26, 18, 0.06);
-      }
-      .preview-control label {
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-      .preview-control select {
-        min-width: 178px;
-        border: 1px solid var(--border-strong);
-        border-radius: 999px;
-        background: var(--surface-strong);
-        color: var(--text);
-        font: inherit;
-        font-weight: 600;
-        padding: 8px 12px;
-      }
       .eyebrow {
         margin: 0 0 12px;
         color: var(--muted-soft);
@@ -563,12 +534,6 @@
       }
       @media (max-width: 620px) {
         .about-main { padding-top: 18px; }
-        .preview-control {
-          width: 100%;
-          justify-content: space-between;
-          border-radius: 18px;
-        }
-        .preview-control select { min-width: 0; width: 56%; }
         .stats { grid-template-columns: 1fr; }
         .photo-wide,
         .photo-portrait,
@@ -622,15 +587,6 @@
     </div>
 
     <main class="about-main">
-      <div class="preview-control">
-        <label for="about-variant">Preview style</label>
-        <select id="about-variant" aria-label="Choose About page preview style">
-          <option value="editorial">Editorial Flow</option>
-          <option value="gallery">Timeline Thread</option>
-          <option value="portrait">Magazine Index</option>
-        </select>
-      </div>
-
       <section class="about-hero">
         <div class="about-hero-copy">
           <p class="eyebrow">About Obii</p>
@@ -784,11 +740,5 @@
     </main>
 
     <script src="./site-theme.js"></script>
-    <script>
-      const variantSelect = document.querySelector("#about-variant");
-      variantSelect?.addEventListener("change", (event) => {
-        document.body.dataset.aboutVariant = event.target.value;
-      });
-    </script>
   </body>
 </html>

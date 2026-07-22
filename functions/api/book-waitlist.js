@@ -26,12 +26,45 @@ async function verifyTurnstile(token, secret, ip) {
   return Boolean(data.success);
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 async function sendWelcomeEmail(env, email, firstName) {
   if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL) {
     return { skipped: true };
   }
 
   const displayName = firstName ? firstName.trim() : 'there';
+  const safeDisplayName = escapeHtml(displayName);
+  const linkedInUrl = 'https://www.linkedin.com/in/obiageli-okafor';
+  const welcomeText = `Hi ${displayName},
+
+Thank you for joining the waitlist for Impossible to Ignore. I'm so glad you're here.
+
+This book has been an honest answer to a question I get frequently asked: "How do I become more professionally visible?" and I'm excited to share it with you. As a waitlist member, you'll get exclusive updates and be among the first to know when the book is available.
+
+In the meantime, let's stay connected on LinkedIn (@Obiageli (obii) Okafor). I regularly share practical insights on product management, career growth, leadership and building a career that stands out.
+
+Thank you again for being part of this journey. I genuinely appreciate your support, and I can't wait to share this book with you.
+
+Warmly,
+Obii Okafor.`;
+
+  const welcomeHtml = `
+        <p>Hi ${safeDisplayName},</p>
+        <p>Thank you for joining the waitlist for <strong>Impossible to Ignore</strong>. I'm so glad you're here.</p>
+        <p>This book has been an honest answer to a question I get frequently asked: &quot;How do I become more professionally visible?&quot; and I'm excited to share it with you. As a waitlist member, you'll get exclusive updates and be among the first to know when the book is available.</p>
+        <p>In the meantime, let's stay connected on <a href="${linkedInUrl}">LinkedIn (@Obiageli (obii) Okafor)</a>. I regularly share practical insights on product management, career growth, leadership and building a career that stands out.</p>
+        <p>Thank you again for being part of this journey. I genuinely appreciate your support, and I can't wait to share <em>this book</em> with you.</p>
+        <p>Warmly,<br /><strong>Obii Okafor.</strong></p>
+      `;
+
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -42,8 +75,8 @@ async function sendWelcomeEmail(env, email, firstName) {
       from: env.RESEND_FROM_EMAIL,
       to: [email],
       subject: "You're on the waitlist",
-      text: `Hi ${displayName},\n\nThank you for joining the waitlist for my book. I'm glad you're here early.\n\nI'll be in touch with thoughtful updates, first looks, and launch news when it's ready.\n\nWarmly,\nObii`,
-      html: `<p>Hi ${displayName},</p><p>Thank you for joining the waitlist for my book. I'm glad you're here early.</p><p>I'll be in touch with thoughtful updates, first looks, and launch news when it's ready.</p><p>Warmly,<br />Obii</p>`
+      text: welcomeText,
+      html: welcomeHtml
     })
   });
 
